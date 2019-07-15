@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "Search on Spotify",
+    "description": "Searches Spotify for an album on Bandcamp",
+    "version": "1.0",
+    "browser_action": {
+        "default_icon": "bc-to-spot-icon.png",
+        "default_title": "Search Spotify?"
+    },
+    "background": {
+        "scripts": ["background.js"]
+        },
+    "content_scripts": [
+        {
+            "matches": ["https://*.bandcamp.com/album/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "permissions": [
+        "tabs"
+    ]
+}
